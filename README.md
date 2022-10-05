@@ -33,6 +33,10 @@ body-parser
 perf_hooks
 ```
 
+## ❓ How does it works ?
+
+First of all you create a route (a new page) and in this page you execute an sql query that will redirect a json and then you just need to make a api request from your project to use this json
+
 ## ☕ Author
 
     - ambroiselebs
