@@ -19,10 +19,10 @@ app.use(function(req, res, next) {
 
 //----------------------- DataBase -----------------------//
 const db = mysql.createConnection({
-    host: "178.79.153.141",
-    user: "ambroiselebs",
-    password: "Ambroise338*",
-    database: "mycandy"
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "apiserver"
 })
 db.connect()
 //----------------------- END -----------------------//
@@ -38,7 +38,7 @@ app.get('/', function(req, res) {
 //Exemple : Select all users
 app.get('/all', function(req, res) {
 
-    db.query('SELECT * FROM items', function(error, result, fields) {
+    db.query('SELECT * FROM users', function(error, result, fields) {
         if (error) throw error
         return res.send({ data: result })
     })
