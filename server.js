@@ -31,8 +31,9 @@ db.connect()
 
 
 //----------------------- Routes -----------------------//
-//Default Route /
-route.routes(app, db)
+
+route.routes(app, db) //Exit them in | ./resources/routes.js |
+
 //----------------------- END -----------------------//
 
 
