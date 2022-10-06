@@ -1,6 +1,7 @@
 function run(app) {
     var startTime = performance.now()
     app.listen(3000, function(){
+        console.clear()
         console.log('\x1b[0m');
         var endTime = performance.now()
         console.log('\x1b[32m\x1b[1mAPI-SERVER \x1b[0m\x1b[32mv1.0.0  \x1b[37m\x1b[2mready in \x1b[0m\x1b[37m\x1b[1m'+(endTime-startTime)+'\x1b[37m\x1b[2m\x1b[0m ms\x1b[0m');
