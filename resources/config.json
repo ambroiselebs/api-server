@@ -1,0 +1,11 @@
+{
+    "db": {
+        "host": "localhost",
+        "user": "root",
+        "password": "",
+        "database": "api-server"
+    },
+    "server": {
+        "port": 3000
+    }
+}

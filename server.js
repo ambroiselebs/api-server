@@ -23,14 +23,14 @@ app.use(function(req, res, next) {
 
 
 //----------------------- DataBase -----------------------//
-let rowData = fs.readFileSync('./resources/database.json')
+let rowData = fs.readFileSync('./resources/config.json')
 let bddInfos = JSON.parse(rowData)
 
 const db = mysql.createConnection({
-    host: bddInfos.host,
-    user: bddInfos.user,
-    password: bddInfos.password,
-    database: bddInfos.database
+    host: bddInfos.db.host,
+    user: bddInfos.db.user,
+    password: bddInfos.db.password,
+    database: bddInfos.db.database
 })
 db.connect()
 //----------------------- END -----------------------//
@@ -44,6 +44,6 @@ route.routes(app, db) //Edit them in | ./resources/routes.js |
 
 
 //----------------------- Run the server -----------------------//
-runServer.run(app)
+runServer.run(app, fs)
 module.exports = app;
 //----------------------- END -----------------------//

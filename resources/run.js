@@ -1,6 +1,10 @@
-function run(app) {
+function run(app, fs) {
+
+    let portInfoFile = fs.readFileSync('./resources/config.json')
+    let serverInfos = JSON.parse(portInfoFile)
+
     var startTime = performance.now()
-    app.listen(3000, function(){
+    app.listen(serverInfos.server.port, function(){
         console.clear()
         console.log('\x1b[0m');
         var endTime = performance.now()

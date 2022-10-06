@@ -8,10 +8,12 @@ $ npm install
 $ npm run serve
 ```
 
+You can change the port of your server in `./resources/config.json`, in the section "server"
+
 ## 💻 Configuration
 
 ### Connection to the database : 
-The database connection is done in a json file in `./resources/database.json`
+The database connection is done in a json file in `./resources/config.json` in the section "db"
 ```
 host = the ip of your database
 user = the username that you will use
