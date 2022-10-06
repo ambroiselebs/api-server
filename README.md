@@ -11,7 +11,7 @@ $ npm run serve
 ## 💻 Configuration
 
 ### Connection to the database : 
-The database connection is done from the line 21 to 27
+The database connection is done in a json file in `./resources/database.json`
 ```
 host = the ip of your database
 user = the username that you will use
@@ -21,7 +21,7 @@ database = the database that you will work with
 
 ### Create a route
 
-The routes are defined in the file located in ./resources/routes.js
+The routes are defined in the file located in `./resources/routes.js`
 An exemple is given
 
 ## 📚 Library 

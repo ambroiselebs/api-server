@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 const { performance } = require('perf_hooks');
 
 const route = require('./resources/routes.js')
+const runServer = require('./resources/run.js')
+
+const fs = require('fs')
 
 
 //----------------------- Configure the Server -----------------------//
@@ -20,11 +23,14 @@ app.use(function(req, res, next) {
 
 
 //----------------------- DataBase -----------------------//
+let rowData = fs.readFileSync('./resources/database.json')
+let bddInfos = JSON.parse(rowData)
+
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "api-server"
+    host: bddInfos.host,
+    user: bddInfos.user,
+    password: bddInfos.password,
+    database: bddInfos.database
 })
 db.connect()
 //----------------------- END -----------------------//
@@ -32,23 +38,12 @@ db.connect()
 
 //----------------------- Routes -----------------------//
 
-route.routes(app, db) //Exit them in | ./resources/routes.js |
+route.routes(app, db) //Edit them in | ./resources/routes.js |
 
 //----------------------- END -----------------------//
 
 
 //----------------------- Run the server -----------------------//
-var startTime = performance.now()
-app.listen(3000, function(){
-    console.log('\x1b[0m');
-    var endTime = performance.now()
-    console.log('\x1b[32m\x1b[1mAPI-SERVER \x1b[0m\x1b[32mv1.0.0  \x1b[37m\x1b[2mready in \x1b[0m\x1b[37m\x1b[1m'+(endTime-startTime)+'\x1b[37m\x1b[2m\x1b[0m ms\x1b[0m');
-    console.log('');
-    console.log('\x1b[32m➜  \x1b[37m\x1b[1mHostname:    \x1b[0m\x1b[36mhttp://localhost/');
-    console.log('\x1b[32m➜  \x1b[37m\x1b[1mPort:        \x1b[0m\x1b[36m3000');
-    console.log('\x1b[32m➜  \x1b[37m\x1b[1mURL:         \x1b[0m\x1b[36mhttp://localhost:\x1b[1m3000\x1b[0m\x1b[36m/');
-    console.log('');
-    console.log('\x1b[37m\x1b[2mMade by ambroiselebs\x1b[37m\x1b[0m');
-})
+runServer.run(app)
 module.exports = app;
 //----------------------- END -----------------------//
