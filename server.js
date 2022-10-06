@@ -3,6 +3,8 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const { performance } = require('perf_hooks');
 
+const route = require('./resources/routes.js')
+
 
 //----------------------- Configure the Server -----------------------//
 const app = express()
@@ -22,7 +24,7 @@ const db = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "apiserver"
+    database: "api-server"
 })
 db.connect()
 //----------------------- END -----------------------//
@@ -30,19 +32,7 @@ db.connect()
 
 //----------------------- Routes -----------------------//
 //Default Route /
-app.get('/', function(req, res) {
-    
-    return res.send({ error: true, message: 'Hello world!' })
-})
-
-//Exemple : Select all users
-app.get('/all', function(req, res) {
-
-    db.query('SELECT * FROM users', function(error, result, fields) {
-        if (error) throw error
-        return res.send({ data: result })
-    })
-})
+route.routes(app, db)
 //----------------------- END -----------------------//
 
 

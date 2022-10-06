@@ -21,8 +21,8 @@ database = the database that you will work with
 
 ### Create a route
 
-The route are creating in the section called "Routes"
-You have an exemple if needed
+The routes are defined in the file located in ./resources/routes.js
+An exemple is given
 
 ## 📚 Library 
 
