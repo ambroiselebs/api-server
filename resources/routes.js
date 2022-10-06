@@ -15,6 +15,17 @@ function routes(app, db) {
             if (error) throw error
             return res.send({ data: result })
         })
+
+    })
+
+    //Exemple : Route with parameters
+    app.get('/test/:id', function(req, res) {
+
+        db.query('SELECT * FROM items WHERE i_id LIKE '+req.params.id, function(err, rslt) {
+            if (err) throw err
+            return res.send({ data: rslt })
+        })
+
     })
 
 
