@@ -2,7 +2,7 @@
 
 ## 💽 Installation
 ```
-$ https://github.com/ambroiselebs/api-server.git
+$ git clone https://github.com/ambroiselebs/api-server.git
 $ npm install
 $ npm run serve
 ```
