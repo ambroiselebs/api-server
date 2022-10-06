@@ -32,6 +32,7 @@ express
 mysql2
 body-parser
 perf_hooks
+nodemon
 ```
 
 ## ❓ How does it works ?
