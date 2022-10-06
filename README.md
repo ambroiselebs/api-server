@@ -3,6 +3,7 @@
 ## 💽 Installation
 ```
 $ git clone https://github.com/ambroiselebs/api-server.git
+$ cd api-server/
 $ npm install
 $ npm run serve
 ```
