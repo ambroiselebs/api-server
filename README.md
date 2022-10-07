@@ -8,9 +8,6 @@ $ npm install
 $ npm run serve
 ```
 
-You can change the port of your server in `./resources/config.json`, in the section "server"
-You can also change your API token (which is used in the routes url) in `./resources/config.json`
-
 ## 💻 Configuration
 
 ### Connection to the database : 
@@ -26,6 +23,10 @@ database = the database that you will work with
 
 The routes are defined in the file located in `./resources/routes.js`
 An exemple is given
+
+### Configure the server
+
+All configuration for the server is in te file `./resources/config.json` in the section
 
 ## 📚 Library 
 
