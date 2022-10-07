@@ -38,7 +38,7 @@ db.connect()
 
 //----------------------- Routes -----------------------//
 
-route.routes(app, db) //Edit them in | ./resources/routes.js |
+route.routes(app, db, fs) //Edit them in | ./resources/routes.js |
 
 //----------------------- END -----------------------//
 

@@ -9,6 +9,7 @@ $ npm run serve
 ```
 
 You can change the port of your server in `./resources/config.json`, in the section "server"
+You can also change your API token (which is used in the routes url) in `./resources/config.json`
 
 ## 💻 Configuration
 
