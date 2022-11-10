@@ -1,12 +1,11 @@
-const mysql = require('mysql2')
-const express = require('express')
-const bodyParser = require('body-parser')
-const { performance } = require('perf_hooks');
+import bodyParser from 'body-parser';
+import { Performance } from 'perf_hooks';
+import express from 'express'
 
-const route = require('./resources/routes.js')
-const runServer = require('./resources/run.js')
+import { routes } from './src/routes.js';
+import { run } from './resources/run.js';
 
-const fs = require('fs')
+import fs from 'fs'
 
 
 //----------------------- Configure the Server -----------------------//
@@ -23,27 +22,17 @@ app.use(function(req, res, next) {
 
 
 //----------------------- DataBase -----------------------//
-let rowData = fs.readFileSync('./resources/config.json')
-let bddInfos = JSON.parse(rowData)
 
-const db = mysql.createConnection({
-    host: bddInfos.db.host,
-    user: bddInfos.db.user,
-    password: bddInfos.db.password,
-    database: bddInfos.db.database
-})
-db.connect()
 //----------------------- END -----------------------//
 
 
 //----------------------- Routes -----------------------//
 
-route.routes(app, db, fs) //Edit them in | ./resources/routes.js |
+routes(app, fs) //Edit them in | ./src/routes.js |
 
 //----------------------- END -----------------------//
 
 
 //----------------------- Run the server -----------------------//
-runServer.run(app, fs)
-module.exports = app;
+run(app, fs)
 //----------------------- END -----------------------//

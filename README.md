@@ -11,7 +11,7 @@ $ npm run serve
 ## 💻 Configuration
 
 ### Connection to the database : 
-The database connection is done in a json file in `./resources/config.json` in the section "db"
+The database connection is done in a json file in `./src/config.json` in the section "db"
 ```
 host = the ip of your database
 user = the username that you will use
@@ -21,12 +21,17 @@ database = the database that you will work with
 
 ### Create a route
 
-The routes are defined in the file located in `./resources/routes.js`
+The routes are defined in the file located in `./src/routes.js`
 An exemple is given
+
+### Create a controller
+
+If you are running on a windows os, you can use `createController.bat`
+perhaps, look at the exemple given
 
 ### Configure the server
 
-All configuration for the server is in te file `./resources/config.json` in the section
+All configuration for the server is in te file `./src/config.json` in the section
 
 ## 📚 Library 
 
@@ -38,6 +43,7 @@ body-parser
 perf_hooks
 nodemon
 ```
+The project is running on ES6
 
 ## ❓ How does it works ?
 

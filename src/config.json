@@ -3,7 +3,11 @@
         "host": "localhost",
         "user": "root",
         "password": "",
-        "database": "api-server"
+        "database": "api-server",
+        "connectionLimit": 10,
+        "connectTimeout": 20000,
+        "waitForConnections": true,
+        "queueLimit": 0
     },
     "server": {
         "port": 3000,
