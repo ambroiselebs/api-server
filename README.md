@@ -26,7 +26,7 @@ An exemple is given
 
 ### Create a controller
 
-If you are running on a windows os, you can use `createController.bat`
+If you are running on a windows os, you can use `createController.bat [Name of your controller]`
 perhaps, look at the exemple given
 
 ### Configure the server
